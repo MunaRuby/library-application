@@ -9,6 +9,8 @@ import utils.UserUtils;
 
 public class Main {
     public static void main(String[] args) {
+
+        // Initialize models
         User librarian = new User("lesley", "okoduwa", Role.LIBRARIAN);
         Library library = new Library();
         LibrarianUtils librarianUtils = new LibrarianUtils(library);
@@ -28,6 +30,7 @@ public class Main {
         Book book1 = new Book("mastering english", "titilola balogun", 230,
                 "english", "1112EE1");
 
+        // The librarian adds a book to the library
         try {
             librarianUtils.addBook(librarian, book);
             librarianUtils.addBook(librarian, book);
@@ -39,6 +42,7 @@ public class Main {
             e.printStackTrace();
         }
 
+        // users try to borrow books
         userUtils.borrowBook(student1, librarian, book.getName());
         userUtils.borrowBook(student1, librarian, book1.getName());
         userUtils.borrowBook(student4, librarian, book.getName());
@@ -49,6 +53,9 @@ public class Main {
         userUtils.borrowBook(student4, librarian, book1.getName());
         userUtils.borrowBook(student1, librarian, book1.getName());
         System.out.println();
+
+        // The priority queue is obtained manually and is used to check the order
+        // in which the requests were sorted
 
 //        System.out.println(library.getRequestQueue());
 //        BookRequest rq1 = library.getRequestQueue().poll();
@@ -72,14 +79,17 @@ public class Main {
 //        System.out.println(rq9.getLender().getRole() + " " + rq9.getBookName());
 
 
+        // we check if the users requests were processed
 //        System.out.println(student4.getListOfBorrowedBooks());
 //        System.out.println(student3.getListOfBorrowedBooks());
 //        System.out.println(student2.getListOfBorrowedBooks());
 //        System.out.println(student1.getListOfBorrowedBooks());
 //        System.out.println(teacher.getListOfBorrowedBooks());
 //
+        // student1 returns a book
 //        userUtils.returnBook(student1, librarian, book);
 //
+        // we check if the book was returned
 //        System.out.println(student4.getListOfBorrowedBooks());
 //        System.out.println(student3.getListOfBorrowedBooks());
 //        System.out.println(student2.getListOfBorrowedBooks());

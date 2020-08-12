@@ -56,6 +56,7 @@ public class LibraryUtils {
      */
     private Book retrieveBook (Map<String, BookData> books, String bookName) throws NotAllowedException {
         BookData bookData = books.get(bookName);
+
         if (bookData == null) throw new NotAllowedException("book does not exist in the library!");
         else if (bookData.getBooksLeft() < 1) throw new NotAllowedException();
         bookData.setBooksLeft(bookData.getBooksLeft() - 1);
@@ -69,6 +70,7 @@ public class LibraryUtils {
      */
     public boolean lend(PriorityQueue requestQueue, Map<String, BookData> books,
                         List<BookRequest> currentLenders, Set<BookRequest> requestHistory) throws NotAllowedException {
+        boolean flag = false;
 
         while (!requestQueue.isEmpty()) {
             BookRequest request = requestQueue.poll();
@@ -78,13 +80,14 @@ public class LibraryUtils {
             // Throw a new exception if the user wants to borrow the same book he/she borrowed before
             if (borrowedBooks.contains(book)) throw new NotAllowedException("You cannot borrow another copy of this book!");
             borrowedBooks.add(book);
+            flag = true;
 
             // Adds the current request object to the list of lenders.
             currentLenders.add(request);
             // Adds the current request object to the overall transaction history.
             requestHistory.add(request);
         }
-        return true;
+        return flag;
     }
 
     /**
@@ -97,6 +100,7 @@ public class LibraryUtils {
     public Book retrieveBook(User person, Book book, List<BookRequest> currentLenders,
                              Set<BookRequest> requestHistory, Map<String, BookData> books) throws NotAllowedException {
         Iterator<BookRequest> requestIterator = currentLenders.iterator();
+        Book returnedBook = null;
         for (BookRequest request : currentLenders) {
             if (request.getLender().equals(person)) {
                 // If the lender borrowed a different book from the book returned throw an exception
@@ -106,6 +110,7 @@ public class LibraryUtils {
                     addBook(books, book);
                     person.getListOfBorrowedBooks().remove(book);
                     currentLenders.remove(request);
+                    returnedBook = book;
 
                     // set the time the book was returned in the request
                     request.setTimeReturned(LocalDateTime.now());
@@ -114,7 +119,7 @@ public class LibraryUtils {
                 }
             }
         }
-        return book;
+        return returnedBook;
     }
 
     private void setTimeBookWasReturned (BookRequest request, Set<BookRequest> requestHistory) {

@@ -9,9 +9,14 @@ import models.people.User;
 public class LibrarianUtils {
     public LibraryUtils libraryUtils = new LibraryUtils();
     public Library library;
+    private int queueSize = 9;
 
     public LibrarianUtils(Library library) {
         this.library = library;
+    }
+    public LibrarianUtils(Library library, int queueSize) {
+        this.library = library;
+        this.queueSize = queueSize;
     }
 
     /**
@@ -41,7 +46,7 @@ public class LibrarianUtils {
         boolean added = libraryUtils.addToBookRequestQueue(library.getRequestQueue(), bookRequest);
 
         // When we have 9 requests or more in the queue, begin processing these requests
-        if (library.getRequestQueue().size() >= 10) {
+        if (library.getRequestQueue().size() >= queueSize) {
             libraryUtils.lend(library.getRequestQueue(), library.getBooks(), library.getCurrentLenders(), library.getRequestHistory());
         }
 
@@ -59,6 +64,7 @@ public class LibrarianUtils {
     public boolean retrieveBook (User person, User librarian, Book book) throws NotAllowedException {
         // Only a librarian can get access to libraryUtils
         if (librarian.getRole() != Role.LIBRARIAN) throw new NotAllowedException("you do not have required permissions!");
+
         Book returnedBook = libraryUtils.retrieveBook(person, book, library.getCurrentLenders(), library.getRequestHistory(), library.getBooks());
         return returnedBook != null;
     }

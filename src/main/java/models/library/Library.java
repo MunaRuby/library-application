@@ -17,6 +17,8 @@ public class Library {
         The Comparator provided compares book request based on the role lender of the book.
         All staff objects, a librarian and a teacher would have equal priority over student
         objects. Where senior students would have priority over junior students
+        ------------------------------------------------------------------------------------>
+        This is the default implementation unless stated otherwise
      */
     private PriorityQueue requestQueue = new PriorityQueue(new Comparator<BookRequest>() {
         @Override
@@ -53,9 +55,13 @@ public class Library {
     private Set<BookRequest> requestHistory = new HashSet<>();
 
     public Library () {}
+
+    // If priority is specified as false, the default implementation will be used (i.e
+    // teachers come first) else the second implementation will be used i.e
+    // First come First serve, regardless of role
     public Library(boolean priority) {
         if (!priority)
-            this.setRequestQueue(new PriorityQueue());
+            this.requestQueue = new PriorityQueue();
     }
 
     public Map<String, BookData> getBooks() {

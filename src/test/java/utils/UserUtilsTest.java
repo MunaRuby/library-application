@@ -34,12 +34,12 @@ class UserUtilsTest {
             assertEquals(3, librarianUtils.library.getRequestQueue().size());
             assertEquals(false, librarianUtils.library.getRequestQueue().isEmpty());
             assertEquals(true, successfullyBorrowed);
-            assertEquals(1, user.getListOfBorrowedBooks().size());
         });
     }
 
     @Test
     void returnBook() {
-
+            boolean notSuccessfullyReturned = userUtils.returnBook(user, librarian, book);
+            assertEquals(false, notSuccessfullyReturned);
     }
 }
