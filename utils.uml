@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>utils</OriginalElement>
+  <nodes>
+    <node x="548.1458333333334" y="800.0">utils.UserUtilsTest</node>
+    <node x="920.8958333333334" y="303.0">utils.Role</node>
+    <node x="0.0" y="67.0">utils.NotAllowedException</node>
+    <node x="566.3958333333334" y="0.0">utils.PriorityQueue</node>
+    <node x="214.89583333333337" y="259.0">utils.LibraryUtils</node>
+    <node x="90.02750000000003" y="494.5">utils.Borrower</node>
+    <node x="386.02750000000003" y="472.0">utils.LibrarianUtils</node>
+    <node x="108.40250000000003" y="642.0">utils.UserUtils</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="utils.LibraryUtils" target="utils.PriorityQueue">
+      <point x="171.5" y="-81.5" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="utils.LibrarianUtils" target="utils.LibraryUtils">
+      <point x="39.875" y="-60.0" />
+      <point x="585.4025" y="442.0" />
+      <point x="729.3958333333334" y="442.0" />
+      <point x="171.5" y="81.5" />
+    </edge>
+    <edge source="utils.LibrarianUtils" target="utils.NotAllowedException">
+      <point x="-119.625" y="-60.0" />
+      <point x="425.90250000000003" y="452.0" />
+      <point x="103.79694444444453" y="452.0" />
+      <point x="103.79694444444453" y="234.0" />
+      <point x="123.5" y="234.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="utils.UserUtils" target="utils.NotAllowedException">
+      <point x="-119.625" y="-49.0" />
+      <point x="148.27750000000003" y="622.0" />
+      <point x="64.46500000000003" y="622.0" />
+      <point x="64.46500000000003" y="234.0" />
+      <point x="41.166666666666686" y="234.0" />
+      <point x="-82.33333333333331" y="37.5" />
+    </edge>
+    <edge source="utils.LibrarianUtils" target="utils.Role">
+      <point x="119.625" y="-60.0" />
+      <point x="665.1525" y="452.0" />
+      <point x="968.1458333333334" y="452.0" />
+      <point x="-47.25" y="37.5" />
+    </edge>
+    <edge source="utils.UserUtils" target="utils.Borrower">
+      <point x="-39.875" y="-49.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="utils.LibraryUtils" target="utils.NotAllowedException">
+      <point x="-171.5" y="-81.5" />
+      <point x="386.39583333333337" y="234.0" />
+      <point x="205.83333333333331" y="234.0" />
+      <point x="82.33333333333331" y="37.5" />
+    </edge>
+    <edge source="utils.UserUtilsTest" target="utils.Role">
+      <point x="67.20000000000005" y="-48.5" />
+      <point x="699.3458333333334" y="780.0" />
+      <point x="1062.6458333333335" y="780.0" />
+      <point x="47.250000000000114" y="37.5" />
+    </edge>
+    <edge source="utils.UserUtilsTest" target="utils.LibrarianUtils">
+      <point x="0.0" y="-48.5" />
+      <point x="632.1458333333334" y="760.0" />
+      <point x="585.4025" y="760.0" />
+      <point x="39.875" y="60.0" />
+    </edge>
+    <edge source="utils.UserUtils" target="utils.LibrarianUtils">
+      <point x="39.875" y="-49.0" />
+      <point x="307.77750000000003" y="612.0" />
+      <point x="425.90250000000003" y="612.0" />
+      <point x="-119.625" y="60.0" />
+    </edge>
+    <edge source="utils.UserUtilsTest" target="utils.UserUtils">
+      <point x="-67.19999999999993" y="-48.5" />
+      <point x="564.9458333333334" y="780.0" />
+      <point x="188.15250000000003" y="780.0" />
+      <point x="-79.75" y="49.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6728462377317339" x="555.0" y="448.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>models.library</OriginalElement>
+  <nodes>
+    <node x="276.30340909090904" y="301.0">models.library.BookRequest</node>
+    <node x="586.4375" y="0.0">models.library.Book</node>
+    <node x="0.0" y="547.5">models.library.BookRequestTest</node>
+    <node x="858.4829545454545" y="536.5">models.library.BookDataTest</node>
+    <node x="853.3034090909091" y="323.5">models.library.BookData</node>
+    <node x="528.3034090909091" y="334.5">models.library.BookTest</node>
+    <node x="390.1045454545455" y="503.0">models.library.Library</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="models.library.Library" target="models.library.BookRequest">
+      <point x="0.0" y="-82.0" />
+      <point x="512.6045454545455" y="483.0" />
+      <point x="485.1034090909091" y="483.0" />
+      <point x="92.80000000000007" y="71.0" />
+    </edge>
+    <edge source="models.library.BookRequestTest" target="models.library.Book">
+      <point x="-44.375" y="-37.5" />
+      <point x="133.125" y="483.0" />
+      <point x="125.2318181818182" y="483.0" />
+      <point x="125.2318181818182" y="271.0" />
+      <point x="651.6875" y="271.0" />
+      <point x="-108.75" y="115.5" />
+    </edge>
+    <edge source="models.library.BookData" target="models.library.Book">
+      <point x="36.0" y="-48.5" />
+      <point x="961.3034090909091" y="271.0" />
+      <point x="825.6875" y="271.0" />
+      <point x="65.25" y="115.5" />
+    </edge>
+    <edge source="models.library.Library" target="models.library.BookData">
+      <point x="49.0" y="-82.0" />
+      <point x="561.6045454545455" y="463.0" />
+      <point x="871.3034090909091" y="463.0" />
+      <point x="-54.0" y="48.5" />
+    </edge>
+    <edge source="models.library.BookRequestTest" target="models.library.BookRequest">
+      <point x="133.125" y="-37.5" />
+      <point x="310.625" y="483.0" />
+      <point x="345.90340909090907" y="483.0" />
+      <point x="-46.39999999999998" y="71.0" />
+    </edge>
+    <edge source="models.library.BookTest" target="models.library.Book">
+      <point x="-76.25" y="-37.5" />
+      <point x="604.5534090909091" y="281.0" />
+      <point x="695.1875" y="281.0" />
+      <point x="-65.25" y="115.5" />
+    </edge>
+    <edge source="models.library.BookDataTest" target="models.library.Book">
+      <point x="127.875" y="-48.5" />
+      <point x="1156.8579545454545" y="473.0" />
+      <point x="1043.7045454545455" y="473.0" />
+      <point x="1043.7045454545455" y="251.0" />
+      <point x="912.6875" y="251.0" />
+      <point x="152.25000000000003" y="115.5" />
+    </edge>
+    <edge source="models.library.BookDataTest" target="models.library.BookData">
+      <point x="-42.625" y="-48.5" />
+      <point x="986.3579545454545" y="483.0" />
+      <point x="979.3034090909091" y="483.0" />
+      <point x="54.0" y="48.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="684.2857142857142" y="420.71428571428567" />
+  <SelectedNodes>
+    <node>models.library.Library</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
